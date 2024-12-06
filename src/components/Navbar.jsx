@@ -59,7 +59,7 @@ const Navbar = () => {
       className="fixed inset-x-0 w-dvw z-50 h-20 border-none transition-all duration-700 "
     >
       <header className="absolute top-1/2 w-full -translate-y-1/2">
-        <nav className="flex size-full items-center justify-between p-4 md:pl-10 md:pr-20">
+        <nav className="flex size-full items-center justify-between p-4 pr-7 md:pl-10 md:pr-20">
           <div className="flex items-center gap-7">
             <img src="/img/logo.png" alt="logo" className="w-10" />
             <Button
