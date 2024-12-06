@@ -48,7 +48,7 @@ body {
   }
 
   .floating-nav {
-    @apply bg-black border;
+    @apply bg-black border max-md:hidden;
   }
 
   .absolute-center {
