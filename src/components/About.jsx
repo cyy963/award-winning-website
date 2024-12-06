@@ -1,4 +1,4 @@
-import { useGSAP } from "@gsap/react";
+import { useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import AnimatedTitle from "./AnimatedTitle";
@@ -6,7 +6,8 @@ import AnimatedTitle from "./AnimatedTitle";
 gsap.registerPlugin(ScrollTrigger);
 
 const About = () => {
-  useGSAP(() => {
+  useEffect(() => {
+    // Create the animation with ScrollTrigger
     const clipAnimation = gsap.timeline({
       scrollTrigger: {
         trigger: "#clip",
@@ -19,11 +20,25 @@ const About = () => {
     });
 
     clipAnimation.to(".mask-clip-path", {
-      width: "100dvw",
-      height: "100dvh",
+      width: "100vw", // Corrected "100dvw" to "100vw" for valid value
+      height: "100vh",
       borderRadius: 0,
     });
-  });
+
+    // Setup an event listener for window resize
+    const handleResize = () => {
+      ScrollTrigger.refresh();  // Refresh ScrollTrigger instances
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    // Cleanup function to remove the event listener
+    return () => {
+      window.removeEventListener('resize', handleResize);
+      // Kill the ScrollTrigger instance to prevent memory leaks
+      clipAnimation.scrollTrigger.kill();
+    };
+  }, []);
 
   return (
     <div id="about" className="min-h-screen w-screen">
@@ -55,4 +70,5 @@ const About = () => {
     </div>
   );
 };
+
 export default About;
