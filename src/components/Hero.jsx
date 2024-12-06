@@ -24,7 +24,7 @@ const Hero = () => {
   };
 
   useEffect(() => {
-    if (loadedVideos === totalVideos - 1) {
+    if (loadedVideos >= totalVideos - 3) {
       setLoading(false);
     }
   }, [loadedVideos]);
