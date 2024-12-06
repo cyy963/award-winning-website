@@ -15,7 +15,7 @@ const Footer = () => {
           ©Nova 2024. All rights reserved
         </p>
 
-        <div className="flex justify-center gap-4  md:justify-start absolute left-1/2 -translate-x-1/2">
+        <div className="flex justify-center gap-4  md:justify-start md:absolute md:left-1/2 md:-translate-x-1/2">
           {socialLinks.map((link, index) => (
             <a
               key={index}
