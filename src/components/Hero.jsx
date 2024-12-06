@@ -127,6 +127,7 @@ const Hero = () => {
             id="next-video"
             className="absolute-center invisible absolute z-20 size-64 object-cover object-center"
             onLoadedData={handleVideoLoad}
+            playsInline={true}
           />
           <video
             src={getVideoSrc(
@@ -137,6 +138,7 @@ const Hero = () => {
             muted
             className="absolute left-0 top-0 size-full object-cover object-center"
             onLoadedData={handleVideoLoad}
+            playsInline={true}
           />
         </div>
 
