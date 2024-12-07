@@ -12,7 +12,7 @@ const About = () => {
       scrollTrigger: {
         trigger: "#clip",
         start: "top top",
-        end: "+=800 center",
+        end: "+=1000 center",
         scrub: 1,
         pin: true,
         pinSpacing: true,
@@ -43,7 +43,7 @@ const About = () => {
   return (
     <div id="prologue" className="min-h-screen w-screen">
       <div className="relative mb-8 mt-36 flex flex-col items-center gap-5">
-        <h2 className="font-general text-sm uppercase md:text-[10px]">
+        <h2 className="font-general text-sm uppercase md:text-[20px]">
           Welcome to Zentry
         </h2>
 
