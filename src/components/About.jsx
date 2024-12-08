@@ -20,8 +20,8 @@ const About = () => {
     });
 
     clipAnimation.to(".mask-clip-path", {
-      width: "100vw", // Corrected "100dvw" to "100vw" for valid value
-      height: "100vh",
+      width: "100dvw", // Corrected "100dvw" to "100vw" for valid value
+      height: "100dvh",
       borderRadius: 0,
     });
 

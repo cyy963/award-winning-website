@@ -73,11 +73,11 @@ body {
   }
 
   .about-subtext {
-    @apply flex flex-col w-full max-w-96 text-center font-circular-web text-lg md:max-w-[34rem] py-4;
+    @apply flex flex-col w-full max-w-96 text-center font-circular-web text-lg md:max-w-[35rem] py-2;
   }
 
   .about-image {
-    @apply absolute left-1/2 top-0 z-20 h-[60vh] w-96 origin-center -translate-x-1/2 overflow-hidden rounded-3xl md:w-[30vw];
+    @apply absolute left-1/2 top-0 z-20 h-[100dvh] w-96 origin-center -translate-x-1/2 overflow-hidden rounded-3xl md:w-[30vw];
   }
 
   .animated-title {
