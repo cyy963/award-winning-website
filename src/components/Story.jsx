@@ -103,7 +103,7 @@ const FloatingImage = () => {
           </div>
         </div>
 
-        <div className="absolute md:bottom-6 bottom-36 md:right-[5%] z-50 flex w-full justify-center md:justify-end max-md:flex p-4">
+        <div className="absolute md:bottom-[10%] bottom-36 md:right-[5%] z-50 flex w-full justify-center md:justify-end max-md:flex p-6">
           <div className="flex h-full w-fit flex-col items-center md:items-start">
             <p className="mt-3 max-w-sm text-center font-circular-web text-violet-50 md:text-start">
               Where realms converge, lies Zentry and the boundless pillar.
