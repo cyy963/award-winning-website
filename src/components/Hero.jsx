@@ -25,11 +25,11 @@ const Hero = () => {
   };
 
   useEffect(() => {
-    // Fallback: Set a timeout to stop loading visuals after 2 seconds
+    // Fallback: Set a timeout to stop loading visuals after 1.5 seconds
     fallbackTimeout.current = setTimeout(() => {
       setLoading(false);
       console.warn("Fallback triggered: Some videos may not have loaded.");
-    }, 2000); // Adjust the timeout duration as needed
+    }, 1500); // Adjust the timeout duration as needed
 
     return () => {
       // Clear the timeout if the component unmounts or all videos load early
