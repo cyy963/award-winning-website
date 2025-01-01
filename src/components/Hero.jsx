@@ -18,16 +18,32 @@ const Hero = () => {
 
   const totalVideos = 4;
   const nextVdRef = useRef(null);
+  const fallbackTimeout = useRef(null);
 
   const handleVideoLoad = () => {
     setLoadedVideos((prev) => prev + 1);
   };
 
   useEffect(() => {
-    if (loadedVideos >= totalVideos - 1) {
+    // Fallback: Set a timeout to stop loading visuals after 2 seconds
+    fallbackTimeout.current = setTimeout(() => {
       setLoading(false);
+      console.warn("Fallback triggered: Some videos may not have loaded.");
+    }, 2000); // Adjust the timeout duration as needed
+
+    return () => {
+      // Clear the timeout if the component unmounts or all videos load early
+      clearTimeout(fallbackTimeout.current);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (loadedVideos >= totalVideos) {
+      setLoading(false);
+      // Clear the fallback timeout if all videos load successfully
+      clearTimeout(fallbackTimeout.current);
     }
-  }, [loadedVideos]);
+  }, [loadedVideos, totalVideos]);
 
   const handleMiniVdClick = () => {
     setHasClicked(true);
